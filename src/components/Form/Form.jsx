@@ -3,7 +3,7 @@ import { StyledForm } from './Form.styled';
 import contactsCheking from 'utils/contactsChecking';
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
-import { addContact } from 'redux/contactsSlice';
+import { addContactThunk } from 'redux/contactsOperations';
 
 export const Form = () => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export const Form = () => {
     ).length;
 
     if (!inContactList) {
-      dispatch(addContact({ name, number }));
+      dispatch(addContactThunk({ name, number }));
     }
 
     reset();
