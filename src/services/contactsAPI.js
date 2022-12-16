@@ -12,6 +12,6 @@ export const addContact = async data => {
 };
 
 export const deleteContact = async id => {
-  const response = await axios.delete('', id);
+  const response = await axios.delete(id);
   return response;
 };
